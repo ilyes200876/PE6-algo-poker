@@ -75,17 +75,16 @@ Type Main
     */
     PROCÉDURE trier()
     DÉBUT
-        
-        // À compléter avec l'algo de tri que vous préférez, voir Wikipédia
-        SI this.cartes[0].comparerCouleur(this.cartes[1]) = 1
-            OU
-            (this.cartes[0].comparerCouleur(this.cartes[1]) = 0 
-            ET this.cartes[0].comparerValeur(this.cartes[1]) = 1) ALORS
-            Déclarer Carte temp
-            temp <- this.cartes[0]
-            this.cartes[0] <- this.cartes[1]
-            this.cartes[1] <- temp
-        FINSI
+        Déclarer i
+        Déclarer j
+        pour i allant de (taillethis.carte)-1 à 1
+        pour j allant de 0 à i-1
+            SI this.cartes[0].comparerCouleur(this.cartes[1]) = 1
+               OU this.cartes[0].comparerCouleur(this.cartes[1]) = 0 
+               ET this.cartes[0].comparerValeur(this.cartes[1]) = 1 ALORS           
+                (this.carte[j+1], Tthis.carte[j]) = (Tthis.carte[j], this.carte[j+1])
+            FINSI
+        FINPOUR
         
     FIN
 FINSI
